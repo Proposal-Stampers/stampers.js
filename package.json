@@ -1,11 +1,11 @@
 {
-  "name": "@bonustrack/snapshot.js",
+  "name": "@stampers/stampers.js",
   "version": "0.1.0",
-  "repository": "bonustrack/snapshot.js",
+  "repository": "Proposal-Stampers/stampers.js",
   "license": "MIT",
-  "main": "dist/snapshot.cjs.js",
-  "module": "dist/snapshot.esm.js",
-  "browser": "dist/snapshot.min.js",
+  "main": "dist/stampers.cjs.js",
+  "module": "dist/stampers.esm.js",
+  "browser": "dist/stampers.min.js",
   "dependencies": {
     "@ethersproject/abi": "^5.0.4",
     "@ethersproject/address": "^5.0.4",

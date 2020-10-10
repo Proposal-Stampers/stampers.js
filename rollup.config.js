@@ -4,7 +4,7 @@ import filesize from 'rollup-plugin-filesize';
 import json from 'rollup-plugin-json';
 import pkg from './package.json';
 
-const name = 'snapshot';
+const name = 'stampers';
 const input = 'src/index.ts';
 const external = [...Object.keys(pkg.dependencies || {})];
 
