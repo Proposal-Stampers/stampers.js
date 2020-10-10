@@ -24,7 +24,7 @@ const abi = [
 ];
 
 export async function strategy(network, provider, addresses, options, snapshot) {
-  const blockTag = typeof snapshot === 'number' ? snapshot : 'latest';
+  const blockTag = typeof snapshot === 'number' ? snapshot : 'latest_state';
   let [score, [pricePerFullShare]] = await Promise.all([
     erc20BalanceOfStrategy(network, provider, addresses, options, snapshot),
     multicall(

@@ -84,7 +84,7 @@ const abi = [
 ];
 
 export async function strategy(network, provider, addresses, options, snapshot) {
-  const blockTag = typeof snapshot === 'number' ? snapshot : 'latest';
+  const blockTag = typeof snapshot === 'number' ? snapshot : 'latest_state';
   const memberAddresses = await multicall(
     network,
     provider,

@@ -34,7 +34,7 @@ export async function strategy(network, provider, addresses, options, snapshot) 
       }
     }
   };
-  if (snapshot !== 'latest') {
+  if (snapshot !== 'latest_state') {
     // @ts-ignore
     params.poolShares.__args.block = { number: snapshot };
   }

@@ -18,7 +18,7 @@ export async function strategy(
   options,
   snapshot
 ) {
-  const blockTag = typeof snapshot === 'number' ? snapshot : 'latest';
+  const blockTag = typeof snapshot === 'number' ? snapshot : 'latest_state';
   const response = await multicall(
     network,
     provider,

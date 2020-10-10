@@ -6,7 +6,7 @@ export const author = 'bonustrack';
 export const version = '0.1.0';
 
 export async function strategy(network, provider, addresses, options, snapshot) {
-  const blockTag = typeof snapshot === 'number' ? snapshot : 'latest';
+  const blockTag = typeof snapshot === 'number' ? snapshot : 'latest_state';
   const response = await multicall(
     network,
     provider,

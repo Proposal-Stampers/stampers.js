@@ -36,7 +36,7 @@ export async function subgraphRequest(url, query) {
   return data || {};
 }
 
-export async function getScores(strategies, network, provider, addresses, snapshot = 'latest') {
+export async function getScores(strategies, network, provider, addresses, snapshot = 'latest_state') {
   return await Promise.all(
     strategies.map(strategy =>
       _strategies[strategy[0]](
