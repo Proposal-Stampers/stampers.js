@@ -8,7 +8,7 @@ export async function strategy(network, provider, addresses, options, snapshot) 
   return Object.fromEntries(
     Object.entries(score).map(address => [
       address[0],
-      Math.sqrt(address[1])
+      Math.sqrt(address[1] as number)
     ])
   );
 }
