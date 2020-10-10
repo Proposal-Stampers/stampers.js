@@ -11,7 +11,7 @@ export const MULTICALL = {
   100: '0xb5b692a88bdfc81ca69dcb1d924f59f0413a602a'
 }
 
-export async function multicall(network, provider, abi, calls, options?) {
+export async function multicall(network, provider, abi, calls, options?): Promise<any[]> {
   try {
     const responses = await Promise.all(calls.map(call => {
       const contractInstance = provider.Contract({ abi, address: call[0] });
