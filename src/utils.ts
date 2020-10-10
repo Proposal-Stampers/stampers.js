@@ -1,7 +1,4 @@
-import { Interface } from '@ethersproject/abi';
-import { Contract } from '@ethersproject/contracts';
 import { jsonToGraphQLQuery } from 'json-to-graphql-query';
-import { abi as multicallAbi } from './abi/Multicall.json';
 import _strategies from './strategies';
 
 export const MULTICALL = {
@@ -15,19 +12,12 @@ export const MULTICALL = {
 }
 
 export async function multicall(network, provider, abi, calls, options?) {
-  const multi = new Contract(MULTICALL[network], multicallAbi, provider);
-  const itf = new Interface(abi);
   try {
-    const [, response] = await multi.aggregate(
-      calls.map(call => [
-        call[0].toLowerCase(),
-        itf.encodeFunctionData(call[1], call[2])
-      ]),
-      options || {}
-    );
-    return response.map((call, i) =>
-      itf.decodeFunctionResult(calls[i][1], call)
-    );
+    const responses = await Promise.all(calls.map(call => {
+      const contractInstance = provider.Contract({ abi, address: call[0] });
+      return contractInstance[call[1]].call(...call[2]).call(null, options.blockTag);
+    }));
+    return responses;
   } catch (e) {
     return Promise.reject();
   }

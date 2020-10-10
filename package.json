@@ -7,9 +7,7 @@
   "module": "dist/stampers.esm.js",
   "browser": "dist/stampers.min.js",
   "dependencies": {
-    "@ethersproject/abi": "^5.0.4",
     "@ethersproject/address": "^5.0.4",
-    "@ethersproject/contracts": "^5.0.3",
     "@ethersproject/units": "^5.0.3",
     "json-to-graphql-query": "^2.0.0"
   },
