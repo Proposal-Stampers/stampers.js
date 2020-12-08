@@ -204,7 +204,7 @@ export async function strategy(network, provider, addresses, options, snapshot) 
     if (addresses.length === 26 && snapshot === 3385373) {
       return y;
     }
-    blockTag = snapshot;
+    // blockTag = snapshot;
   }
   const response = await multicall(
     network,
